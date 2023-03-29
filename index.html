@@ -8,8 +8,17 @@
         <h1>Моя первая страничка</h1>
         <p>Привет мир!!!</p>
         <script>
-            var massege = 'Привет Мир!';
-            console.log(massege);
+            var family = ['Bair', 'Aiur', 'Mama', 'Papa'];
+            var nam = family[Math.floor(Math.random()*4)];
+            if (nam === 'Bair') {
+                console.log('Hello Bair!')
+            } else if (nam === 'Aiur') {
+                console.log('Hello Aiur!');
+            } else if (nam === 'Mama') {
+                console.log('Hello Mama!');
+            } else if (nam === 'Papa') {
+                console.log('Hello Papa!');
+            }
         </script>
     </body>
 </html>

@@ -1,11 +1,11 @@
 var family = ['Bair', 'Aiur', 'Mama', 'Papa'];
-var name = family[Math.floor(Math.random()*4)];
-if (name === 'Bair') {
+var nam = family[Math.floor(Math.random()*4)];
+if (nam === 'Bair') {
     console.log('Hello Bair!')
-} else if (name === 'Aiur') {
+} else if (nam === 'Aiur') {
     console.log('Hello Aiur!');
-} else if (name === 'Mama') {
+} else if (nam === 'Mama') {
     console.log('Hello Mama!');
-} else if (name === 'Papa') {
+} else if (nam === 'Papa') {
     console.log('Hello Papa!');
 }
