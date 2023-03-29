@@ -1,11 +1,5 @@
-var family = ['Bair', 'Aiur', 'Mama', 'Papa'];
-var nam = family[Math.floor(Math.random()*4)];
-if (nam === 'Bair') {
-    console.log('Hello Bair!')
-} else if (nam === 'Aiur') {
-    console.log('Hello Aiur!');
-} else if (nam === 'Mama') {
-    console.log('Hello Mama!');
-} else if (nam === 'Papa') {
-    console.log('Hello Papa!');
+var animals = ['Кот', 'Пес', 'Свинья', 'Гусь'];
+for (var i = 0; i < animals.length; i++) {
+    animals[i] = animals[i] + ' - прекрасное животное!';
 }
+console.log(animals);
