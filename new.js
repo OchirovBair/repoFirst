@@ -1,16 +1,12 @@
-var string = 'javascript is awesome';
-var string1 = '';
-for (var i = 0; i < string.length; i++) {
-    if (string[i] === 'a') {
-        string1 = string1 + '4';
-    } else if ( string[i] === 'e') {
-        string1 = string1 + '3';
-    } else if ( string[i] === 'i') {
-        string1 = string1 + '1';
-    } else if ( string[i] === 'o') {
-        string1 = string1 + '0';
-    } else {
-        string1 = string1 + string[i];
-    }
+var randomWords = ['рыба', 'муравей', 'слон', 'лев', 'птица', 'кошка', 'собака'];
+var word = randomWords[Math.floor(Math.random() * randomWords.length)];
+var array = [];
+for (var i = 0; i < word.length; i++) {
+    array[i] = '_'; 
 }
-console.log(string1);
+var remainigLetters = word.length;
+var j = 0;
+while (remainigLetters > j) {
+    console.log(array.join(' '));
+    console.log('Угадай букву или нажми \"Отмена\", чтобы выйти из игры.');
+}
