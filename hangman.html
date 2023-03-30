@@ -14,7 +14,7 @@
                 array[i] = '_'; 
             }
             var remainigLetters = word.length;
-            var popitki = word.length + 2;
+            var popitki = word.length + 5;
             while (remainigLetters > 0 && popitki > 0) {
                 alert(array.join(' '));
                 var guess = prompt('Угадай букву или нажми \"Отмена\", чтобы выйти из игры.');
@@ -35,7 +35,7 @@
             }
             alert(array.join(' '));
             if (remainigLetters === 0) {
-                alert('Правильно! Было слово: ' + word);
+                alert('Правильно! Было слово: ' + word.toUpperCase());
             } else {
                 alert('Игра окончена!');
             }
