@@ -6,11 +6,16 @@
     </head>
     <body>
         <h1 id="main-heading">Привет, Мир!</h1>
+        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
             var headingElement = document.getElementById('main-heading');
             console.log(headingElement.innerHTML);
             var newHeadinText = prompt('Введите новый текст:');
             headingElement.innerHTML = newHeadinText;
+        </script>
+        <script>
+            var newHeadinText = prompt('Введите новый текст:');
+            $('#main-heading').text(newHeadinText);
         </script>
     </body>
 </html>
