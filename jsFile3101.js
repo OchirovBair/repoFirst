@@ -1,6 +1,7 @@
-var howManyTimesPrintCats = function (howManyTimes) {
-    for (var i = 0; i < howManyTimes; i++) {
-        console.log(i + 1 + '=^.^=');
-    }
+function add(number1, number2) {
+    return number1 + number2;
 }
-howManyTimesPrintCats(100);
+function multiply(number1, number2) {
+    return number1 * number2;
+}
+console.log(add(multiply(36325, 9824), 777));
