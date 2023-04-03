@@ -14,8 +14,12 @@
             headingElement.innerHTML = newHeadinText;
         </script>
         <script>
-            var newHeadinText = prompt('Введите новый текст:');
-            $('#main-heading').text(newHeadinText);
+            for (var i = 0; i < 3; i++) {
+                var newHeadinText = prompt('Введите новый текст:');
+                $('p').append('<p>' + newHeadinText + '</p>');
+            }
+            $('h1').text('Этот текст скоро исчезнет').fadeOut(3000).fadeIn(3000);
+            $('h1').text('Этот текст скоро исчезнет').slideUp(3000).slideDown(3000);
         </script>
     </body>
 </html>
