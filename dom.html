@@ -5,14 +5,15 @@
         <title>Изучаем DOM</title>
     </head>
     <body>
-        <h1>Привет, Мир!</h1>
-        <h2>Привет, Я!</h2>
+        <h1>Привет Мир!</h1>
         <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
-            for (var i = 0; i < 5; i++) {
-                $('h1').hide(1000);
-                $('h1').show(1000);
+            $('h1').text('Best friends');
+            var friends = ['Maykle', 'Piter', 'Andy', 'Smith'];
+            for (var i = 0; i < friends.length; i++) {
+                $('body').append('<p>' + friends[i] + '</p>');
             }
+            $('p').append(' лучший!');
         </script>
     </body>
 </html>
