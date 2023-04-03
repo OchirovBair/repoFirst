@@ -5,21 +5,14 @@
         <title>Изучаем DOM</title>
     </head>
     <body>
-        <h1 id="main-heading">Привет, Мир!</h1>
+        <h1>Привет, Мир!</h1>
+        <h2>Привет, Я!</h2>
         <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
-            var headingElement = document.getElementById('main-heading');
-            console.log(headingElement.innerHTML);
-            var newHeadinText = prompt('Введите новый текст:');
-            headingElement.innerHTML = newHeadinText;
-        </script>
-        <script>
-            for (var i = 0; i < 3; i++) {
-                var newHeadinText = prompt('Введите новый текст:');
-                $('p').append('<p>' + newHeadinText + '</p>');
+            for (var i = 0; i < 5; i++) {
+                $('h1').hide(1000);
+                $('h1').show(1000);
             }
-            $('h1').text('Этот текст скоро исчезнет').fadeOut(3000).fadeIn(3000);
-            $('h1').text('Этот текст скоро исчезнет').slideUp(3000).slideDown(3000);
         </script>
     </body>
 </html>
