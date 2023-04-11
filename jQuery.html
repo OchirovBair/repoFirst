@@ -8,11 +8,12 @@
         <h1 id="main-heading">Привет Мир!</h1>
         <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
-            for (var i = 0; i < 5; i++) {
-                var time = (i + 1) * 1000;
-                $('#main-heading').fadeOut(time / 2).delay(5000);
-                $('#main-heading').fadeIn(time / 2).delay(5000)
+            var friends = ['Jack', 'Black', 'Bazz']
+            for (var i = 0; i < friends.length; i++) {
+                $('body').append(`<p>${friends[i]}</p>`).fadeIn(3000);
             }
+            $('p').append(' best!!!');
+            $('#main-heading').text('My friends');
         </script>
     </body>
 </html>
