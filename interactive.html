@@ -40,6 +40,9 @@
                 }
             }
         }
-        setInterval(moveHeadind, 30);
+        var idInterval = setInterval(moveHeadind, 30);
+        $('#heading').click(function() {
+            clearInterval(idInterval);
+        });
     </script>
 </body>
