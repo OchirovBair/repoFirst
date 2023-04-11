@@ -6,6 +6,7 @@
     </head>
     <body>
         <h1 id="main-heading">Привет Мир!</h1>
+        <h1 id="nomain-heading">Привет Я!</h1>
         <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
             var friends = ['Jack', 'Black', 'Bazz']
@@ -17,6 +18,7 @@
             for (var j = 0; j < 5; j++) {
                 $('#main-heading').text('My friends').fadeOut(k * (j + 1)).fadeIn(k * (j + 1));
             }
+            $('#nomain-heading').fadeOut(3000).delay(3000).fadeIn(3000);
         </script>
     </body>
 </html>
