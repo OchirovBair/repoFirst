@@ -13,7 +13,10 @@
                 $('body').append(`<p>${friends[i]}</p>`).fadeIn(3000);
             }
             $('p').append(' best!!!');
-            $('#main-heading').text('My friends');
+            var k = 500;
+            for (var j = 0; j < 5; j++) {
+                $('#main-heading').text('My friends').fadeOut(k * (j + 1)).fadeIn(k * (j + 1));
+            }
         </script>
     </body>
 </html>
