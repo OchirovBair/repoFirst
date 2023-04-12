@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Объектно-ориентированное програмированние.</title>
+    </head>
+    
+    <body>
+        <h1>Пример Мир!</h1>
+        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+        <script>
+            var speak = function() {
+                console.log(`${this.sound} Меня зовут: ${this.name}`);
+            }
+            var dog = {
+                name: 'Оладушек',
+                legs: 4,
+                isAwesome: true,
+                sound: 'Гав-гав!',
+                speak: speak
+            };
+            var cat = {
+                sound: 'Мяу!',
+                speak: speak,
+                name: 'Пирожок'
+            }
+            dog.speak();
+            cat.speak();
+        </script>
+    </body>
+</html>
