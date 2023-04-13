@@ -11,6 +11,7 @@
         var Car = function (x, y) {
             this.x = x;
             this.y = y;
+            this.draw();
         };
         Car.prototype.draw = function() {
             var carHtml = '<img src="http://nostarch.com/images/car.png">';
@@ -22,29 +23,29 @@
             });
             $("body").append(this.carElement);
         };
-        Car.prototype.moveRight = function(z) {
-            this.x += z;
+        Car.prototype.moveRight = function() {
+            this.x += this.speed;
             this.carElement.css({
                 left: this.x,
                 top: this.y
             });     
         };
-        Car.prototype.moveLeft = function(z) {
-            this.x -= z;
+        Car.prototype.moveLeft = function() {
+            this.x -= this.speed;
             this.carElement.css({
                 left: this.x,
                 top: this.y
             });     
         };
-        Car.prototype.moveUp = function(z) {
-            this.y -= z;
+        Car.prototype.moveUp = function() {
+            this.y -= this.speed;
             this.carElement.css({
                 left: this.x,
                 top: this.y
             });     
         };
-        Car.prototype.moveDown = function(z) {
-            this.y += z;
+        Car.prototype.moveDown = function() {
+            this.y += Math.floor(Math.random() * 100);
             this.carElement.css({
                 left: this.x,
                 top: this.y
@@ -54,7 +55,6 @@
         var nissan = new Car(100, 200);
         tesla.draw();
         nissan.draw();
-
         </script>
     </body>
 </html>
