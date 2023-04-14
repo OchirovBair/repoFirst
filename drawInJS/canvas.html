@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Рисование с помощью Canvas</title>
+    </head>
+
+    <body>
+        <canvas id="canvas" width="2000" height="2000"></canvas>
+        
+        <script>
+
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var z = 0;
+            var x = 1;
+            for (var i = 0; i < 15; i++) {
+                ctx.fillRect(z, z, x, x);
+                z = z + x;
+                x = x * 2;
+            };
+        </script>
+    </body>
+</html>
