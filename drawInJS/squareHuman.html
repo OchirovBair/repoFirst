@@ -6,19 +6,18 @@
     </head>
 
     <body>
-        <canvas id="canvas" width="200" height="200"></canvas>
+        <canvas id="canvas" width="2000 " height="2000"></canvas>
         
         <script>
 
             var canvas = document.getElementById('canvas');
             var ctx = canvas.getContext('2d');
-            var z = 0;
-            var x = 1;
-            for (var i = 0; i < 15; i++) {
-                ctx.fillRect(z, z, x, x);
-                z = z + x;
-                x = x * 2;
-            };
+            ctx.fillRect(50, 10, 50, 50);
+            ctx.fillRect(70, 60, 10, 20);
+            ctx.fillRect(0, 80, 150, 10);
+            ctx.fillRect(40, 90, 70, 70);
+            ctx.fillRect(40, 160, 10, 40);
+            ctx.fillRect(100, 160, 10, 40);
         </script>
     </body>
 </html>
