@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Снеговик</title>
+    </head>
+
+    <body>
+        <h1>Снеговик</h1>
+        <canvas id="canvas" width="1000" height="1000"></canvas>
+        <script>
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var snowMan = function(q, w) {
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = 'black';
+                ctx.fillStyle = 'red';
+                var circle = function(x, y, r, fillCircle) {
+                    if (fillCircle === false) {
+                        ctx.beginPath();
+                        ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                        ctx.stroke(); 
+                    } else if (fillCircle === undefined) {
+                        ctx.beginPath();
+                        ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                        ctx.stroke(); 
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                        ctx.fill();
+                    }
+                }
+                var square = function(a, b, c, d) {
+                    ctx.fillStyle = 'black';
+                    ctx.beginPath();
+                    ctx.fillRect(a, b, c, d);              
+                }
+                
+                square(q, w, 80, 110);
+                square(q-40, w+110, 160, 10);
+                circle(q+40, w+200, 80);
+                circle(q+10, w+180, 15, true);
+                circle(q+70, w+180, 15, true);
+                square(q+10, w+230, 60, 20);
+                circle(q+40, w+380, 100);
+            }
+            snowMan(500, 500);
+            snowMan(100, 100);
+        </script>
+    </body>
+</html>
