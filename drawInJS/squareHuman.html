@@ -46,10 +46,20 @@
             ctx.arc(100, 100, 10, 0, Math.PI * 2, true);
             ctx.stroke();
 
-            var circle = function(x, y, r) {
-                ctx.beginPath();
-                ctx.arc(x, y, r, 0, Math.PI * 2, true);
-                ctx.stroke();
+            var circle = function(x, y, r, fillCircle) {
+                if (fillCircle === false) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                    ctx.stroke(); 
+                } else if (fillCircle === undefined) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                    ctx.stroke(); 
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                    ctx.fill();
+                }
             }
             circle(200, 200, 50);
             circle(400, 400, 50);
