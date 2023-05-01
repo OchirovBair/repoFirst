@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Игра висилица</title>
+    </head>
+    <body>
+        <h1>Висилица</h1>
+        <script>
+            var randomWords = ['рыба', 'муравей', 'слон', 'лев', 'птица', 'кошка', 'собака'];
+            var word = randomWords[Math.floor(Math.random() * randomWords.length)];
+            var array = [];
+            for (var i = 0; i < word.length; i++) {
+                array[i] = '_'; 
+            }
+            var remainigLetters = word.length;
+            var popitki = word.length + 5;
+            while (remainigLetters > 0 && popitki > 0) {
+                alert(array.join(' '));
+                var guess = prompt('Угадай букву или нажми \"Отмена\", чтобы выйти из игры.');
+                guess = guess.toLowerCase()
+                popitki--;
+                if (guess === null) {
+                    break;
+                } else if (guess.length !== 1) {
+                    alert('Введите одну букву!');
+                } else {
+                    for (var k = 0; k < word.length; k++) {
+                        if (word[k] === guess && array[k] === '_') {
+                            array[k] = guess;
+                            remainigLetters--;
+                        }
+                    }
+                }
+            }
+            alert(array.join(' '));
+            if (remainigLetters === 0) {
+                alert('Правильно! Было слово: ' + word.toUpperCase());
+            } else {
+                alert('Игра окончена!');
+            }
+        </script>
+    </body>
+</html>
