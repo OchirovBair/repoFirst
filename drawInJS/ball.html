@@ -5,17 +5,24 @@
         <title>Отскакивающий мяч</title>
     </head>
     <body>
-        <canvas id="canvas" height="200" width="200"></canvas>
+        <canvas id="canvas" height="400" width="200"></canvas>
         <script>
             var canvas = document.getElementById('canvas');
             var ctx = canvas.getContext('2d');
+            var width = canvas.width;
+            var height = canvas.height;
             var Ball = function() {
                 this.x = 100;
                 this.y = 100;
-                this.xSpeed = -2;
-                this.ySpeed = 3;
+                this.xSpeed = Math.random()*10 - 5;
+                this.ySpeed = Math.random()*10 - 5;
+                var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
+                this.color = randomPickColor(colors);
             };
-            var circle = function(x, y, radius, fillCircle) {
+            var randomPickColor = function(words) {
+                return words[Math.floor(Math.random()*words.length)];
+            }
+            var circle = function(x, y, radius, fillCircle, ) {
                 ctx.beginPath();
                 ctx.arc(x, y, radius, Math.PI*2, false);
                 if (fillCircle) {
@@ -25,6 +32,7 @@
                 };
             };
             Ball.prototype.draw = function() {
+                ctx.fillStyle = this.color;
                 circle(this.x, this.y, 3, true);
             };
             Ball.prototype.move = function() {
@@ -32,20 +40,26 @@
                 this.y += this.ySpeed;
             }
             Ball.prototype.checkCollision = function () {
-                if (this.x < 0 || this.x > 200) {
+                if (this.x < 0 || this.x > width) {
                     this.xSpeed = -this.xSpeed;
                 }
-                if (this.y < 0 || this.y > 200) {
+                if (this.y < 0 || this.y > height) {
                     this.ySpeed = -this.ySpeed;
                 };
             };
-            var ball = new Ball();
+            
+            var balls = [];
+            for (var i=0; i<10; i++) {
+                balls[i] = new Ball;
+            }
             setInterval(function() {
-                ctx.clearRect(0, 0, 200, 200);
-                ball.draw();
-                ball.move();
-                ball.checkCollision();
-                ctx.strokeRect(0, 0, 200, 200);
+                ctx.clearRect(0, 0, width, height);
+                for (var i=0; i<balls.length; i++) {
+                    balls[i].draw();
+                    balls[i].move();
+                    balls[i].checkCollision();
+                };
+                ctx.strokeRect(0, 0, width, height);
             }, 30);
         </script>
     </body>
