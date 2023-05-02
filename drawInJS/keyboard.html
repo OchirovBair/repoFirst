@@ -31,14 +31,14 @@
                 this.x += this.xSpeed;
                 this.y += this.ySpeed;
                 if (this.x < 0) {
-                    this.x = width;
+                    this.xSpeed = -this.xSpeed;
                 } else if (this.x > width) {
-                    this.x = 0;
+                    this.xSpeed = -this.xSpeed;
                 }
                 if (this.y < 0) {
-                    this.y = height;
+                    this.ySpeed = -this.ySpeed;
                 } else if (this.y > height) {
-                    this.y = 0;
+                    this.ySpeed = -this.ySpeed;
                 }
             };
             Ball.prototype.draw = function() {
@@ -62,6 +62,11 @@
                     this.ySpeed = 0;
                 };
             };
+            /*Ball.prototype.setSpeed = function(speed) {
+                if (speed === 1) {
+
+                }
+            }*/
             var ball = new Ball();
             var keyActions = {
                 32: 'stop',
@@ -69,7 +74,18 @@
                 38: "up", 
                 39: "right", 
                 40: "down"
-            }
+            };
+            var speed = {
+                49: 1,
+                50: 2,
+                51: 3,
+                52: 4,
+                53: 5,
+                54: 6,
+                55: 7,
+                56: 8,
+                57: 9
+            };
             $('body').keydown(function(event) {
                 var direction = keyActions[event.keyCode];
                 ball.setDirection(direction);
