@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Игра змейка</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="400" height="400"></canvas>
+        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+        <script>
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var width = canvas.width;
+            var height = canvas.height;
+            var blockSize = 10;
+            var widthInBlock = width / blockSize;
+            var heightInBlock = height / blockSize;
+            var score = 0;
+
+            var drawBorder = function() {
+                ctx.fillStyle = 'gray';
+                ctx.fillRect(0, 0, width, blockSize);
+                ctx.fillRect(0, height - blockSize, width, blockSize);
+                ctx.fillRect(0, 0, blockSize, height);
+                ctx.fillRect(width - blockSize, 0, blockSize, height);
+            };
+
+            var drawScore = function() {
+                ctx.font = '20px Courier';
+                ctx.fillStyle = 'black';
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'top';
+                ctx.fillText('Счет: ' + score, blockSize, blockSize);
+            };
+
+            var gameOver = function() {
+                clearInterval(intervalId);
+                ctx.font = '60px Courier';
+                ctx.fillStyle = 'black';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'midle';
+                ctx.fillText('Конец игры!', width/2, height/2);
+            };
+            drawBorder();
+            drawScore();
+            setInterval(function() {
+                ctx.clearRect(0, 0, width, height);
+                for (var i=1; i<100; i++) {
+                    score = score + 1;
+                };
+                drawBorder();
+                drawScore();
+            }, 100)
+        </script>
+    </body>
+</html>
